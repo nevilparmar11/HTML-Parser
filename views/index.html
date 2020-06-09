@@ -1,0 +1,51 @@
+<html>
+<head>
+<style>
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+</style>
+<title>Welcome to Resino Parser</title>
+</head>
+<body>
+<div class="container">
+   <form action="/parse" method="POST">
+        <label for="source code">Source code</label>
+        <textarea id="htmlbox" name="htmlbox" placeholder="Paste your code here" style="height:600px" required></textarea>
+        <p>Please select Appropriate type:</p>
+            <input type="radio" id="internal" name="exam_type" value="internal" checked required>
+            <label for="internal">Internal</label><br>
+            <input type="radio" id="external" name="exam_type" value="external" required>
+            <label for="external">External</label><br><br>
+        <input type="submit" value="submit" > 
+   </form>
+</div>
+   
+</body>
+</html>
