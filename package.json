@@ -1,5 +1,5 @@
 {
-  "name": "html-parser",
+  "name": "resino-parser",
   "version": "1.0.0",
   "description": "Resino parser for egov website",
   "main": "controller/",
