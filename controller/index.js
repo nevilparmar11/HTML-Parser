@@ -14,13 +14,14 @@ app.post('/parse', function (req, res) {
     var htmlContent = req.body.htmlbox;
     const $ = cheerio.load(htmlContent);
     cheerioTableParser($);
+    const temp = $("center").find('b').text();    
     var tableData = $("table").parsetable(true, true, true);
 
     // function to handle table structure
-    var exam_type = req.body.exam_type;
+    // var exam_type = req.body.exam_type;
     var jsonResponse = [];
 
-    if (exam_type === "external")
+    if (temp.includes("External") === true)
         jsonResponse = helper.parseDataForExternal(tableData);
     else
         jsonResponse = helper.parseDataForInternal(tableData);

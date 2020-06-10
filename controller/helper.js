@@ -9,12 +9,12 @@ function parseDataForInternal(tableData) {
     // 15 - sess3
     // 21 - block
 
-    console.table(tableData[0]);
-    console.table(tableData[1]);
-    console.table(tableData[3]);
-    console.table(tableData[9]);
-    console.table(tableData[15]);
-    console.table(tableData[21]);
+    // console.table(tableData[0]);
+    // console.table(tableData[1]);
+    // console.table(tableData[3]);
+    // console.table(tableData[9]);
+    // console.table(tableData[15]);
+    // console.table(tableData[21]);
 
     var jsonResponse = tableData[0] + "<br>" +
         tableData[1] + "<br>" +
@@ -38,18 +38,18 @@ function parseDataForExternal(tableData) {
     // 11 - total marks
     // 13 - subject points
     // 14 - sub grade
-    //15 - subject credit
+    // 15 - subject credit
 
-    console.table(tableData[1]);
-    console.table(tableData[2]);
-    console.table(tableData[3]);
-    console.table(tableData[5]);
-    console.table(tableData[7]);
-    console.table(tableData[9]);
-    console.table(tableData[11]);
-    console.table(tableData[13]);
-    console.table(tableData[14]);
-    console.table(tableData[15]);
+    // console.table(tableData[1]);
+    // console.table(tableData[2]);
+    // console.table(tableData[3]);
+    // console.table(tableData[5]);
+    // console.table(tableData[7]);
+    // console.table(tableData[9]);
+    // console.table(tableData[11]);
+    // console.table(tableData[13]);
+    // console.table(tableData[14]);
+    // console.table(tableData[15]);
 
     var jsonResponse = tableData[1] + "<br>" +
         tableData[2] + "<br>" +
