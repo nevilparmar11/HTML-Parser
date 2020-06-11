@@ -2,10 +2,13 @@ const http = require('http');
 const express = require('express');
 const path = require('path');
 const app = express();
+const bodyParser = require('body-parser');
 const cheerio = require('cheerio');
 const cheerioTableParser = require('cheerio-tableparser');
+
 const helper = require('./helper')
 
+app.use(bodyParser.json());
 app.use(express.urlencoded());
 app.use(express.static("express"));
 
@@ -14,17 +17,17 @@ app.post('/parse', function (req, res) {
     var htmlContent = req.body.htmlbox;
     const $ = cheerio.load(htmlContent);
     cheerioTableParser($);
-    const temp = $("center").find('b').text();    
+    const exam_type = $("center").find('b').text();    
     var tableData = $("table").parsetable(true, true, true);
+    console.log(tableData);
 
     // function to handle table structure
-    // var exam_type = req.body.exam_type;
     var jsonResponse = [];
 
-    if (temp.includes("External") === true)
-        jsonResponse = helper.parseDataForExternal(tableData);
-    else
+    if (exam_type.includes("Internal") === true)
         jsonResponse = helper.parseDataForInternal(tableData);
+    else
+        jsonResponse = helper.parseDataForExternal(tableData);
 
     // parsing successfully completed
     res.send(
